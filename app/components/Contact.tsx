@@ -4,9 +4,12 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import SectionHeading from "@/app/components/ui/SectionHeading";
 
-const Globe = dynamic(() => import("@/app/components/ui/Globe"), {
-  ssr: false,
-});
+const CognizantDatabricksEngine = dynamic(
+  () => import("@/app/components/ui/CognizantDatabricksEngine"),
+  {
+    ssr: false,
+  },
+);
 
 const socialLinks = [
   {
@@ -175,7 +178,7 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* RIGHT: Live Orbital Globe */}
+          {/* RIGHT: Cognizant Databricks Lakehouse Engine Visualizer */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -183,16 +186,8 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
               width: "100%",
-              maxWidth: "460px",
-              aspectRatio: "1",
-              position: "relative",
-              overflow: "hidden",
-              borderRadius: "50%",
+              maxWidth: "520px",
               margin: "0 auto",
-              border: "1px solid rgba(56, 189, 248, 0.25)",
-              boxShadow: "0 12px 48px rgba(56, 189, 248, 0.15)",
-              transform: "translateZ(0)",
-              WebkitMaskImage: "-webkit-radial-gradient(white, black)",
             }}
           >
             <Suspense
@@ -200,14 +195,15 @@ export default function Contact() {
                 <div
                   style={{
                     width: "100%",
-                    height: "100%",
-                    borderRadius: "50%",
-                    background: "rgba(56,189,248,0.04)",
+                    minHeight: "420px",
+                    borderRadius: "16px",
+                    background: "rgba(56, 189, 248, 0.04)",
+                    border: "1px solid rgba(56, 189, 248, 0.2)",
                   }}
                 />
               }
             >
-              <Globe />
+              <CognizantDatabricksEngine />
             </Suspense>
           </motion.div>
         </div>
