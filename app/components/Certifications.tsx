@@ -7,7 +7,11 @@ export default function Certifications() {
   return (
     <section id="certifications" className="section-wrapper">
       <div className="section-inner">
-        <SectionHeading title="Honors & Key Recognitions" divider="light" />
+        <SectionHeading
+          title="Certifications & Credentials"
+          subtitle="Verified Industry Accreditations"
+          divider="light"
+        />
 
         <div
           style={{

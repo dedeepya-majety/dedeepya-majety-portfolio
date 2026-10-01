@@ -251,7 +251,7 @@ export default function Projects() {
       <div className="section-inner">
         <SectionHeading
           title="Featured Projects"
-          subtitle="Enterprise & Research"
+          subtitle="Enterprise Cloud Data Engineering"
           mb="1rem"
         />
         <p
@@ -263,8 +263,8 @@ export default function Projects() {
             marginBottom: "1.75rem",
           }}
         >
-          Production-grade distributed backends, aviation telemetry
-          architectures, and deep learning patent implementations.
+          Enterprise Lakehouse platforms, Delta Lake medallion architectures,
+          and automated cloud ETL orchestration.
         </p>
 
         {/* View toggle */}

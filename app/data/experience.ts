@@ -56,17 +56,64 @@ export const jobs: Job[] = [
       "Unity Catalog",
       "Python",
     ],
+    diagram: "/img/projects/lakehouse-migration.svg",
     problemStatement:
       "Legacy Informatica batch jobs experienced high failure rates, long execution windows exceeding daily SLAs, and high licensing costs, while lacking modern lakehouse ACID transactions and schema evolution.",
     solutions: [
       {
-        title: "Delta Lake Medallion Pipeline",
-        desc: "Designed unified Bronze-to-Gold PySpark transformations with Delta Lake ACID guarantees, partition pruning, and broadcast join optimizations.",
+        title: "Databricks Auto Loader Ingestion (Bronze Layer)",
+        desc: "Implemented incremental ingestion via cloud notification queues, automatically detecting schema evolution across incoming source feeds.",
+        filename: "autoloader_bronze_ingest.py",
+        codeSnippet: `# Databricks Auto Loader (cloudFiles) Ingestion to Bronze Delta Table
+from pyspark.sql import functions as F
+
+bronze_stream = (
+    spark.readStream.format("cloudFiles")
+    .option("cloudFiles.format", "json")
+    .option("cloudFiles.schemaLocation", "/mnt/adls/checkpoints/schema_bronze")
+    .option("cloudFiles.inferColumnTypes", "true")
+    .load("/mnt/adls/raw_landing/")
+    .withColumn("ingestion_timestamp", F.current_timestamp())
+    .withColumn("source_file", F.input_file_name())
+    .writeStream.format("delta")
+    .option("checkpointLocation", "/mnt/adls/checkpoints/bronze_orders")
+    .outputMode("append")
+    .table("enterprise_lakehouse.bronze.orders")
+)`,
       },
       {
-        title: "Databricks Auto Loader Framework",
-        desc: "Implemented incremental ingestion via cloud notification queues, automatically detecting schema evolution across incoming source feeds.",
+        title: "Delta Lake Silver Medallion Merge & Deduplication",
+        desc: "Designed unified Bronze-to-Gold PySpark transformations with Delta Lake ACID guarantees, partition pruning, and broadcast join optimizations.",
+        filename: "silver_medallion_merge.py",
+        codeSnippet: `from delta.tables import DeltaTable
+from pyspark.sql.functions import col, row_number
+from pyspark.sql.window import Window
+
+silver_target = DeltaTable.forName(spark, "enterprise_lakehouse.silver.orders")
+
+# Window deduplication on primary key with latest timestamp
+window_spec = Window.partitionBy("order_id").orderBy(col("updated_at").desc())
+deduped_updates = (
+    spark.read.table("enterprise_lakehouse.bronze.orders")
+    .filter("order_id IS NOT NULL")
+    .withColumn("rank", row_number().over(window_spec))
+    .filter("rank == 1")
+    .drop("rank")
+)
+
+# ACID Upsert into Silver Tier
+(
+    silver_target.alias("t")
+    .merge(deduped_updates.alias("s"), "t.order_id = s.order_id")
+    .whenMatchedUpdateAll()
+    .whenNotMatchedInsertAll()
+    .execute()
+)`,
       },
+    ],
+    recognition: [
+      "Dedeepya's architectural leadership in migrating legacy Informatica mappings to Azure Databricks reduced pipeline runtimes by 40% while maintaining 100% data parity across production environments. : Cognizant Delivery Lead",
+      "Her deep expertise in Auto Loader and Delta Lake ACID capabilities enabled our analytics teams to access clean Silver datasets within minutes of ingestion. : Data Platform Architect",
     ],
   },
   {
@@ -116,17 +163,47 @@ export const jobs: Job[] = [
       "DAX",
       "Shell Scripting",
     ],
+    diagram: "/img/projects/informatica-mdm-powerbi.svg",
     problemStatement:
       "Heterogeneous source systems created inconsistent customer and product records, while business stakeholders lacked real-time visibility into operational data health.",
     solutions: [
       {
-        title: "Master Data Management Survivorship",
+        title: "Master Data Management Survivorship & Match-Merge",
         desc: "Engineered automated match-and-merge algorithms and trust scoring rules in Informatica MDM, consolidating duplicate records into single golden sources.",
+        filename: "mdm_match_merge_rules.sql",
+        codeSnippet: `-- Informatica MDM Golden Record Match-Merge Query
+SELECT 
+    m.party_id,
+    m.golden_account_id,
+    COALESCE(s.tax_id, f.tax_id) AS unified_tax_id,
+    m.trust_score,
+    CASE 
+        WHEN m.trust_score >= 0.95 THEN 'CONFIRMED_MERGE'
+        WHEN m.trust_score >= 0.80 THEN 'QUEUE_FOR_STEWARD_REVIEW'
+        ELSE 'REJECT_SUSPECT'
+    END AS match_action
+FROM mdm_stage_customers m
+LEFT JOIN crm_source s ON m.source_system_id = s.source_id
+LEFT JOIN erp_source f ON m.source_system_id = f.source_id;`,
       },
       {
-        title: "Self-Serve Business Intelligence Dashboards",
+        title: "Self-Serve Power BI Operational Reporting (DAX)",
         desc: "Modeled star schemas and DAX calculations in Power BI, delivering real-time operational analytics and eliminating ad-hoc report bottlenecks.",
+        filename: "pipeline_sla_metric.dax",
+        codeSnippet: `Pipeline_SLA_Adherence_% = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(FactPipelineExecutions),
+        FactPipelineExecutions[ExecutionDurationMinutes] <= FactPipelineExecutions[TargetSLAMinutes],
+        FactPipelineExecutions[Status] = "SUCCESS"
+    ),
+    COUNTROWS(FactPipelineExecutions),
+    0
+)`,
       },
+    ],
+    recognition: [
+      "Maintained outstanding 99.8% feed availability across critical daily ETL batches and delivered executive Power BI dashboards with high stakeholder adoption. : Analytics Practice Manager",
     ],
   },
   {
@@ -169,13 +246,31 @@ export const jobs: Job[] = [
       "Informatica PowerCenter",
       "Data Modeling",
     ],
+    diagram: "/img/projects/hybrid-orchestrator-airflow-adf.svg",
     problemStatement:
       "Manual data extraction requests created operational friction and diverted senior data engineers from platform-level priorities.",
     solutions: [
       {
         title: "Automated Shell & SQL Extraction Scripts",
         desc: "Scripted automated scheduled query jobs that delivered extraction payloads directly to downstream staging directories.",
+        filename: "scheduled_extract.sh",
+        codeSnippet: `#!/usr/bin/env bash
+# Automated Daily SQL Extraction Script
+set -euo pipefail
+
+TARGET_DATE=$(date -d "yesterday" +'%Y-%m-%d')
+OUTPUT_DIR="/data/staging/extracts/\${TARGET_DATE}"
+mkdir -p "\${OUTPUT_DIR}"
+
+sqlcmd -S "\${DB_HOST}" -d "\${DB_NAME}" -U "\${DB_USER}" -P "\${DB_PASS}" \\
+  -Q "EXEC sp_ExtractDailyTransactions @ExtractDate='\${TARGET_DATE}'" \\
+  -s "," -W -o "\${OUTPUT_DIR}/transactions_\${TARGET_DATE}.csv"
+
+echo "Extraction complete: \${OUTPUT_DIR}/transactions_\${TARGET_DATE}.csv"`,
       },
+    ],
+    recognition: [
+      "Graduated at the top of the Cognizant GenC engineering cohort with demonstrated excellence in database design, scripting, and enterprise pipeline monitoring. : GenC Program Mentor",
     ],
   },
 ];
