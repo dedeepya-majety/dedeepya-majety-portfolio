@@ -22,7 +22,7 @@ export const projects: Project[] = [
       { name: "migration", color: "#9b59b6" },
       { name: "adls-gen2", color: "#38BDF8" },
     ],
-    image: "/img/appreciations/Migration_appreciation.png",
+    image: "/img/projects/lakehouse-migration.svg",
   },
   {
     name: "Delta Lake Medallion Architecture with Auto Loader",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       { name: "pyspark", color: "#94A3B8" },
       { name: "data-quality", color: "#9b59b6" },
     ],
-    image: "/img/appreciations/Screenshot 2024-02-12 at 11.24.33 AM.png",
+    image: "/img/projects/medallion-autoloader.svg",
   },
   {
     name: "Hybrid Data Pipeline Orchestrator (Airflow + ADF)",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
       { name: "orchestration", color: "#94A3B8" },
       { name: "azure-devops", color: "#38BDF8" },
     ],
-    image: "/img/appreciations/RBO_scorecard_appreciation.png",
+    image: "/img/projects/hybrid-orchestrator-airflow-adf.svg",
   },
   {
     name: "Enterprise Informatica MDM & Operational Power BI Dashboard",
@@ -61,6 +61,6 @@ export const projects: Project[] = [
       { name: "master-data", color: "#9b59b6" },
       { name: "sql", color: "#38BDF8" },
     ],
-    image: "/img/appreciations/cert_automation_appreciation.png",
+    image: "/img/projects/informatica-mdm-powerbi.svg",
   },
 ];

@@ -1,4 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
-  <rect width="240" height="80" rx="12" fill="#091227" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
-  <text x="120" y="48" fill="#F59E0B" font-family="Montserrat, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="1">SAVEETHA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 75" fill="none">
+  <defs>
+    <linearGradient id="savGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FCD34D"/>
+    </linearGradient>
+  </defs>
+  <!-- Card Background -->
+  <rect width="280" height="75" rx="10" fill="#0B1528" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1.2"/>
+  
+  <!-- Academic Shield Crest -->
+  <g transform="translate(18, 14)">
+    <path d="M22 0 L40 8 V25 C40 37 22 47 22 47 C22 47 4 37 4 25 V8 Z" fill="#0F172A" stroke="url(#savGrad)" stroke-width="2"/>
+    <!-- Book symbol inside crest -->
+    <path d="M14 20 C18 18 22 19 22 22 C22 19 26 18 30 20 V32 C26 30 22 31 22 34 C22 31 18 30 14 32 Z" fill="none" stroke="#F59E0B" stroke-width="1.8"/>
+    <!-- Star above -->
+    <polygon points="22,6 23.5,10 28,10.5 24.5,13.5 25.5,18 22,15.5 18.5,18 19.5,13.5 16,10.5 20.5,10" fill="#FCD34D"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="36" font-family="'Montserrat', -apple-system, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF" letter-spacing="1">SAVEETHA</text>
+  <text x="70" y="53" font-family="'Montserrat', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#F59E0B" letter-spacing="1.5">ENGINEERING COLLEGE</text>
 </svg>

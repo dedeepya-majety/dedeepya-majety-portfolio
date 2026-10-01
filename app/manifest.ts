@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sai Yasaswini Majety — Senior Backend & Cloud Infrastructure Engineer",
-    short_name: "Yasaswini Majety",
+    name: "Dedeepya Majety - Azure Data Engineer",
+    short_name: "Dedeepya Majety",
     description:
-      "Senior Backend & Cloud Infrastructure Engineer with 6+ years shipping high-availability distributed systems, in-flight fleet telemetry engines, and enterprise developer platforms. Ex-Viasat.",
+      "Azure Data Engineer with 3+ years at Cognizant architecting enterprise Lakehouse platforms, PySpark pipelines, and Delta Lake medallion architectures. Databricks & Power BI Certified.",
     start_url: "/",
     display: "standalone",
     background_color: "#091227",
-    theme_color: "#18BC9C",
+    theme_color: "#0284C7",
     icons: [
       {
         src: "/icon-512.png",
@@ -30,7 +30,13 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "maskable",
       },
     ],
-    categories: ["technology", "engineering", "cloud", "portfolio"],
+    categories: [
+      "technology",
+      "engineering",
+      "cloud",
+      "data-engineering",
+      "portfolio",
+    ],
     lang: "en",
     dir: "ltr",
   };

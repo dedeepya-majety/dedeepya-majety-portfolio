@@ -22,14 +22,14 @@ export const degrees: Degree[] = [
   {
     institution: "Saveetha Engineering College",
     shortName: "Saveetha",
-    logo: "/img/education/sastra.svg",
+    logo: "/img/education/saveetha.svg",
     degree:
       "Bachelor of Engineering (B.E.) in Electrical, Electronics & Communications Engineering",
-    period: "2018 – 2022",
+    period: "2018 - 2022",
     location: "Chennai, Tamil Nadu, India",
     gpa: "First Class",
     overview:
-      "4-year undergraduate curriculum covering core computing, signal analysis, communications engineering, and software development, building a rigorous analytical foundation for distributed systems and cloud data engineering.",
+      "4-year undergraduate engineering curriculum covering core computing, signal analysis, communications engineering, and software development, building a rigorous analytical foundation for distributed systems and cloud data engineering.",
     highlights: [
       {
         label: "Engineering Foundations",

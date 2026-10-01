@@ -3,9 +3,9 @@ import type { Job } from "@/app/types";
 export const jobs: Job[] = [
   {
     company: "Cognizant Technology Solutions",
-    logo: "/img/companies/viasat.svg",
+    logo: "/img/companies/cognizant.svg",
     role: "Associate - Data Engineer",
-    period: "Oct 2025 – Present",
+    period: "Oct 2025 - Present",
     location: "Chennai, Tamil Nadu, India",
     desc: "Lead enterprise ETL modernization to Azure Databricks Delta Lake, engineering scalable Medallion Lakehouse pipelines, Auto Loader ingestion, and Apache Airflow orchestration.",
     stack:
@@ -71,9 +71,9 @@ export const jobs: Job[] = [
   },
   {
     company: "Cognizant Technology Solutions",
-    logo: "/img/companies/viasat.svg",
+    logo: "/img/companies/cognizant.svg",
     role: "Programming Analyst - Data Engineer",
-    period: "Feb 2024 – Oct 2025",
+    period: "Feb 2024 - Oct 2025",
     location: "Chennai, Tamil Nadu, India",
     desc: "Maintained mission-critical ETL feeds, tuned Informatica MDM match-merge logic for golden records, and built self-serve Power BI operational dashboards.",
     stack:
@@ -131,9 +131,9 @@ export const jobs: Job[] = [
   },
   {
     company: "Cognizant Technology Solutions",
-    logo: "/img/companies/viasat.svg",
+    logo: "/img/companies/cognizant.svg",
     role: "Programmer Analyst Trainee / GenC Intern",
-    period: "Feb 2022 – Mar 2024",
+    period: "Feb 2022 - Mar 2024",
     location: "Chennai, Tamil Nadu, India",
     desc: "Automated SQL data extraction scripts, tuned PowerCenter workflows, and completed structured cloud and big data engineering training.",
     stack:

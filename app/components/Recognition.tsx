@@ -286,7 +286,7 @@ export default function Recognition() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.logo}
-                        alt="Viasat"
+                        alt={item.name || "Cognizant"}
                         style={{
                           width: "100%",
                           height: "100%",
@@ -584,7 +584,7 @@ export default function Recognition() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={selectedProof.logo}
-                      alt="Viasat"
+                      alt={selectedProof.name || "Cognizant"}
                       style={{
                         width: "100%",
                         height: "100%",

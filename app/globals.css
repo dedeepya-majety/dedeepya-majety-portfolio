@@ -82,14 +82,14 @@ a:active {
   background-color: var(--bg);
 }
 
-/* Inner content container — width matches Recognition card
+/* Inner content container: width matches Recognition card
    (outer 5rem + 84px arrow-inset = ~184px each side at 20px base) */
 .section-inner {
   width: 100%;
   padding: 0 calc(5rem + 84px);
 }
 
-/* Legacy alias — section-inner now carries the full inset */
+/* Legacy alias: section-inner now carries the full inset */
 .section-body {
   margin: 0;
 }
