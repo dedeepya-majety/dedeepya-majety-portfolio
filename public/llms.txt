@@ -1,0 +1,62 @@
+# Dedeepya Majety
+
+> Azure Data Engineer with 3+ years at Cognizant architecting enterprise Lakehouse platforms, PySpark pipelines, Delta Lake medallion architectures (Bronze/Silver/Gold), and automated orchestration via ADF and Apache Airflow. Databricks Certified Associate Developer for Apache Spark 3.0 and Microsoft Certified: Power BI Data Analyst Associate (PL-300).
+
+## Identity & Professional Links
+
+- Full Name: Dedeepya Majety (Majety Dedeepya)
+- Role: Azure Data Engineer / Databricks Platform Specialist
+- Current Location: Chennai, Tamil Nadu, India (Open to Remote / Relocation)
+- Email: majetydedeepya0@gmail.com
+- Phone: +91-6281869953
+- Portfolio: https://dedeepya-majety.github.io
+- LinkedIn: https://www.linkedin.com/in/majetydedeepya-data-engineer
+- GitHub: https://github.com/dedeepya-majety
+
+## Executive Career Highlights
+
+- 3+ Years Azure Data Engineering: Continuous tenure at Cognizant Technology Solutions across 3 progressive engineering designations (GenC Trainee -> Programmer Analyst -> Associate Data Engineer).
+- Legacy to Lakehouse Migration: Spearheaded migration of 40+ legacy Informatica PowerCenter workflows to Azure Databricks with PySpark, slashing pipeline execution runtimes by 40% and cutting cloud infrastructure compute costs by ~30%.
+- Medallion Architecture Mastery: Architected high-scale Delta Lake ingestion and transformation pipelines across Bronze (Auto Loader, schema evolution), Silver (cleansing, deduplication, quality gates), and Gold (dimensional reporting tables) layers.
+- Hybrid Orchestration: Engineered Python-based Apache Airflow DAGs with Git CI/CD and configured Azure Data Factory (ADF) copy pipelines and webhook triggers across ADLS Gen2.
+- Data Governance & Master Data: Enforced table-level and column-level RBAC via Unity Catalog and configured Informatica MDM match-and-merge rule sets and trust scores for enterprise golden records.
+- Industry Credentials: Databricks Certified Associate Developer for Apache Spark 3.0 & Microsoft Certified: Power BI Data Analyst Associate (PL-300).
+
+## Professional Experience
+
+### Cognizant Technology Solutions - Associate (Data Engineer)
+Oct 2025 - Present | Chennai, India
+- Promoted to Associate Data Engineer in recognition of technical leadership across Azure Databricks and Delta Lake implementations.
+- Architected enterprise Lakehouse pipelines using PySpark and Delta Lake, processing multi-source structured and semi-structured feeds with 99.8% SLA adherence.
+- Engineered automated data quality validation frameworks and schema evolution monitoring using Databricks Auto Loader.
+- Collaborated with enterprise stakeholders to deliver production-ready Gold dimensional tables powering business intelligence reporting.
+
+### Cognizant Technology Solutions - Programming Analyst (Data Engineer)
+Feb 2024 - Oct 2025 | Chennai, India
+- Spearheaded end-to-end migration of legacy Informatica PowerCenter workflows to Azure Databricks Lakehouse, achieving 40% faster batch execution and ~30% cost savings.
+- Designed Delta Lake Medallion pipelines (Bronze, Silver, Gold) across ADLS Gen2, implementing ACID transactions, time-travel auditing, and vacuum optimization.
+- Built reusable PySpark transformation libraries for deduplication, SCD Type 2 tracking, and automated partition pruning.
+- Managed Apache Airflow DAGs with Git version control, branch protection, and automated Azure DevOps deployment pipelines.
+
+### Cognizant Technology Solutions - Programmer Analyst Trainee / GenC Intern
+Feb 2022 - Mar 2024 | Chennai, India
+- Selected through competitive university placement for Cognizant's GenC Data Engineering cohort.
+- Developed SQL scripts, stored procedures, and ADF pipeline activities for daily batch ingestion workflows.
+- Implemented Informatica MDM match-and-merge rules, trust scores, and survivorship logic for customer datasets.
+- Built executive Power BI dashboards with DAX calculations for operational performance tracking.
+
+## Technical Skills
+
+- Big Data & Lakehouse: Azure Databricks, Apache Spark 3.0, Delta Lake, PySpark, Spark SQL, Unity Catalog, Medallion Architecture.
+- Cloud & Storage: Microsoft Azure, Azure Data Lake Storage Gen2 (ADLS Gen2), Azure Blob Storage, Azure DevOps.
+- Orchestration & ETL: Azure Data Factory (ADF), Apache Airflow (Python DAGs), Informatica PowerCenter.
+- Data Governance & MDM: Unity Catalog (RBAC, Data Lineage), Informatica MDM (Match/Merge, Trust Scores).
+- Languages & Querying: Python (PySpark), SQL (Spark SQL, Databricks SQL, T-SQL), Bash.
+- BI & Analytics: Microsoft Power BI, DAX, KPI Modeling.
+- Methodologies: Agile/Scrum, Git, CI/CD, Data Quality Gates.
+
+## Education & Certifications
+
+- B.E. in Electronics and Communication Engineering: Saveetha Engineering College (2018 - 2022) - First Class with Distinction.
+- Databricks Certified Associate Developer for Apache Spark 3.0 (2024)
+- Microsoft Certified: Power BI Data Analyst Associate (PL-300) (2023)

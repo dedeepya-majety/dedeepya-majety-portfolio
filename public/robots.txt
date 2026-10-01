@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Modern AI crawlers: welcome, please index for LLM search & attribution
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: FirecrawlAgent
+Allow: /
+
+User-agent: JinaReader
+Allow: /
+
+# Structured LLM ingestion standard:
+# https://dedeepya-majety.github.io/llms.txt
+# https://dedeepya-majety.github.io/llm.txt
+
+Sitemap: https://dedeepya-majety.github.io/sitemap.xml

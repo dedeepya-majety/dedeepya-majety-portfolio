@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --bg: #091227;
+  --teal: #18bc9c;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+  --dark: #2c3e50; /* legacy star divider color */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+
+  /* Spacing */
+  --section-py: 6rem 0;
+  --inner-px: 0 5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  width: 100%;
+  min-width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  color: var(--teal);
+  outline: 0;
+  text-decoration: none;
+}
+
+/* ── Section layout helpers ─────────────────────────────────────────────────── */
+
+/* Full-width section wrapper */
+.section-wrapper {
+  width: 100%;
+  display: block;
+  padding: var(--section-py);
+  background-color: var(--bg);
+}
+
+/* Inner content container — width matches Recognition card
+   (outer 5rem + 84px arrow-inset = ~184px each side at 20px base) */
+.section-inner {
+  width: 100%;
+  padding: 0 calc(5rem + 84px);
+}
+
+/* Legacy alias — section-inner now carries the full inset */
+.section-body {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .section-inner {
+    padding: 0 1.5rem;
+  }
+  .section-body {
+    margin: 0;
+  }
+}
+
+/* ── Glass card ─────────────────────────────────────────────────────────────── */
+.card-glass {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Tech tag pill ──────────────────────────────────────────────────────────── */
+.tag-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  letter-spacing: 0.03em;
+}
+
+/* ── Star divider ───────────────────────────────────────────────────────────── */
+.star-divider {
+  margin: 25px auto 30px;
+  padding: 0;
+  max-width: 250px;
+  border: 0;
+  border-top: 5px solid;
+  text-align: center;
+}
+.star-divider::after {
+  content: "★";
+  display: inline-block;
+  position: relative;
+  top: -0.75em;
+  padding: 0 0.25em;
+  font-size: 1.5em;
+}
+.star-primary {
+  border-color: var(--dark);
+}
+.star-primary::after {
+  color: var(--dark);
+  background: var(--bg);
+}
+.star-light {
+  border-color: var(--text);
+}
+.star-light::after {
+  color: var(--text);
+  background: var(--teal);
+}
+
+/* ── Portfolio caption hover ─────────────────────────────────────────────────── */
+.portfolio-caption {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: rgba(24, 188, 156, 0.9);
+  transition: opacity 0.5s ease;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio-item:hover .portfolio-caption {
+  opacity: 1;
+}
+
+/* ── Project card tilt wrapper ───────────────────────────────────────────────── */
+.tilt-card {
+  background: #0d1526;
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  width: 360px;
+}
+
+@media (max-width: 640px) {
+  .tilt-card {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}

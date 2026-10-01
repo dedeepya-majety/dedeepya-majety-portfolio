@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="ym-cyan-teal" x1="20" y1="20" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" offset="0"/>
+      <stop stop-color="#18BC9C" offset="1"/>
+    </linearGradient>
+    <linearGradient id="ym-bg-grad" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A" offset="0"/>
+      <stop stop-color="#091227" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#ym-bg-grad)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="3"/>
+  <circle cx="64" cy="64" r="44" fill="rgba(24, 188, 156, 0.08)"/>
+  <!-- Stylized Y branch with neural node aesthetic -->
+  <path d="M36 38L54 62V90" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M72 38L54 62" stroke="#18BC9C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Connecting bridge & M letter geometry -->
+  <path d="M70 90L76 52L87 72L98 52L104 90" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Vector Nodes -->
+  <circle cx="36" cy="38" r="4.5" fill="#38BDF8"/>
+  <circle cx="72" cy="38" r="4.5" fill="#18BC9C"/>
+  <circle cx="54" cy="62" r="5" fill="#FFFFFF"/>
+  <circle cx="54" cy="90" r="4" fill="#18BC9C"/>
+  <circle cx="70" cy="90" r="3.5" fill="#38BDF8"/>
+  <circle cx="76" cy="52" r="3.5" fill="#38BDF8"/>
+  <circle cx="87" cy="72" r="4" fill="#FFFFFF"/>
+  <circle cx="98" cy="52" r="3.5" fill="#38BDF8"/>
+  <circle cx="104" cy="90" r="3.5" fill="#38BDF8"/>
+</svg>

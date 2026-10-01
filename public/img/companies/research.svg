@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  <rect width="240" height="80" rx="12" fill="#091227" stroke="rgba(24, 188, 156, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(18, 16)">
+    <!-- Neural / AI node graphic badge -->
+    <rect width="48" height="48" rx="10" fill="rgba(24, 188, 156, 0.12)" stroke="#18BC9C" stroke-width="1.5"/>
+    <!-- Interconnected neural node network -->
+    <circle cx="16" cy="16" r="3.5" fill="#38BDF8"/>
+    <circle cx="16" cy="32" r="3.5" fill="#38BDF8"/>
+    <circle cx="32" cy="16" r="3.5" fill="#18BC9C"/>
+    <circle cx="32" cy="32" r="3.5" fill="#18BC9C"/>
+    <circle cx="24" cy="24" r="4.5" fill="#FFFFFF"/>
+    <!-- Edge lines connecting nodes -->
+    <line x1="16" y1="16" x2="24" y2="24" stroke="rgba(56, 189, 248, 0.6)" stroke-width="1.5"/>
+    <line x1="16" y1="32" x2="24" y2="24" stroke="rgba(56, 189, 248, 0.6)" stroke-width="1.5"/>
+    <line x1="24" y1="24" x2="32" y2="16" stroke="rgba(24, 188, 156, 0.6)" stroke-width="1.5"/>
+    <line x1="24" y1="24" x2="32" y2="32" stroke="rgba(24, 188, 156, 0.6)" stroke-width="1.5"/>
+    <line x1="16" y1="16" x2="32" y2="16" stroke="rgba(255, 255, 255, 0.2)" stroke-dasharray="2 2" stroke-width="1"/>
+    <line x1="16" y1="32" x2="32" y2="32" stroke="rgba(255, 255, 255, 0.2)" stroke-dasharray="2 2" stroke-width="1"/>
+  </g>
+  <text x="76" y="34" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" letter-spacing="1.2">AI SYSTEMS</text>
+  <text x="76" y="49" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#18BC9C" letter-spacing="0.8">INDEPENDENT RESEARCH</text>
+  <text x="76" y="61" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#94A3B8">DEEP LEARNING LAB</text>
+</svg>
