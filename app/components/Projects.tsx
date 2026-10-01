@@ -1,20 +1,39 @@
 "use client";
+
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { Tilt } from "react-tilt";
 import SectionHeading from "@/app/components/ui/SectionHeading";
+import { ProjectModal } from "@/app/components/ui/ProjectModal";
 import { projects, type Project } from "@/app/data";
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({
+  project,
+  index,
+  onSelect,
+}: {
+  project: Project;
+  index: number;
+  onSelect: (p: Project) => void;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
     >
-      <Tilt options={{ max: 15, scale: 1.02, speed: 450 }}>
+      <Tilt options={{ max: 12, scale: 1.02, speed: 450 }}>
         <div
+          role="button"
+          tabIndex={0}
+          onClick={() => onSelect(project)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onSelect(project);
+            }
+          }}
           style={{
             background: "#0d1526",
             borderRadius: "1rem",
@@ -26,10 +45,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             flexDirection: "column",
             justifyContent: "space-between",
             height: "100%",
+            cursor: "pointer",
+            textAlign: "left",
+            transition: "border-color 0.25s ease, box-shadow 0.25s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.4)";
+            e.currentTarget.style.boxShadow =
+              "0 12px 36px rgba(56, 189, 248, 0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.08)";
+            e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.4)";
           }}
         >
           <div>
-            {/* Image */}
+            {/* Image Banner */}
             <div
               style={{
                 position: "relative",
@@ -64,6 +95,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub source"
+                    onClick={(e) => e.stopPropagation()}
                     style={{
                       width: "36px",
                       height: "36px",
@@ -87,6 +119,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Live verification / demo"
+                    onClick={(e) => e.stopPropagation()}
                     style={{
                       width: "36px",
                       height: "36px",
@@ -109,6 +142,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
             {/* Body */}
             <div style={{ marginTop: "1.25rem" }}>
+              <span
+                style={{
+                  fontSize: "0.68rem",
+                  color: "var(--cyan)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontWeight: 700,
+                  display: "block",
+                  marginBottom: "0.3rem",
+                }}
+              >
+                {project.category}
+              </span>
               <h3
                 style={{
                   fontFamily: "var(--font-montserrat), sans-serif",
@@ -117,6 +163,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   margin: "0 0 0.5rem",
                   fontWeight: 700,
                   letterSpacing: "0.02em",
+                  lineHeight: 1.35,
                 }}
               >
                 {project.name}
@@ -135,30 +182,71 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
 
           {/* Tags */}
-          <div
-            style={{
-              marginTop: "1.25rem",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.45rem",
-            }}
-          >
-            {project.tags.map((tag) => (
+          <div style={{ marginTop: "1rem" }}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.45rem",
+              }}
+            >
+              {project.tags.map((tag) => (
+                <span
+                  key={tag.name}
+                  style={{
+                    color: tag.color,
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    background: "rgba(255,255,255,0.03)",
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                  }}
+                >
+                  #{tag.name}
+                </span>
+              ))}
+            </div>
+
+            {/* View Details Callout */}
+            <div
+              style={{
+                marginTop: "1.1rem",
+                paddingTop: "0.85rem",
+                borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <span
-                key={tag.name}
                 style={{
-                  color: tag.color,
-                  fontSize: "0.75rem",
-                  fontWeight: 600,
-                  background: "rgba(255,255,255,0.03)",
-                  padding: "2px 8px",
-                  borderRadius: "4px",
-                  border: "1px solid rgba(255,255,255,0.06)",
+                  color: "var(--cyan)",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.45rem",
                 }}
               >
-                #{tag.name}
+                <i
+                  className="fa fa-plus-circle"
+                  style={{ fontSize: "0.85rem" }}
+                />
+                View Details &amp; HLD
               </span>
-            ))}
+              <span
+                style={{
+                  fontSize: "0.7rem",
+                  color: "#94A3B8",
+                  fontWeight: 600,
+                }}
+              >
+                Deep-Dive Spec
+              </span>
+            </div>
           </div>
         </div>
       </Tilt>
@@ -166,38 +254,67 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-function ProjectListRow({ project }: { project: Project }) {
+function ProjectListRow({
+  project,
+  onSelect,
+}: {
+  project: Project;
+  onSelect: (p: Project) => void;
+}) {
   const [hovered, setHovered] = useState(false);
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onClick={() => onSelect(project)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect(project);
+        }
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "1.1rem 0",
+        padding: "1.1rem 1rem",
         borderBottom: "1px solid rgba(255,255,255,0.07)",
-        cursor: "default",
-        transition: "background 0.2s",
-        background: hovered ? "rgba(56,189,248,0.05)" : "transparent",
-        borderRadius: "6px",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
+        cursor: "pointer",
+        transition: "background 0.2s ease, border-color 0.2s ease",
+        background: hovered ? "rgba(56,189,248,0.06)" : "transparent",
+        borderRadius: "8px",
       }}
     >
-      <span
-        style={{
-          fontFamily: "var(--font-montserrat), sans-serif",
-          color: hovered ? "var(--cyan)" : "var(--text)",
-          fontSize: "0.95rem",
-          fontWeight: 700,
-          transition: "color 0.2s",
-          flex: "0 0 280px",
-        }}
-      >
-        {project.name}
-      </span>
+      <div style={{ flex: "0 0 280px" }}>
+        <span
+          style={{
+            fontSize: "0.68rem",
+            color: "var(--cyan)",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            fontWeight: 700,
+            display: "block",
+            marginBottom: "2px",
+          }}
+        >
+          {project.category}
+        </span>
+        <span
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: hovered ? "var(--cyan)" : "var(--text)",
+            fontSize: "0.95rem",
+            fontWeight: 700,
+            transition: "color 0.2s",
+            display: "block",
+          }}
+        >
+          {project.name}
+        </span>
+      </div>
+
       <span
         style={{
           color: "#94a3b8",
@@ -209,23 +326,50 @@ function ProjectListRow({ project }: { project: Project }) {
       >
         {project.description}
       </span>
+
       <div
         style={{
           display: "flex",
-          gap: "0.4rem",
-          flexWrap: "wrap",
+          alignItems: "center",
+          gap: "1rem",
+          flex: "0 0 240px",
           justifyContent: "flex-end",
-          flex: "0 0 220px",
         }}
       >
-        {project.tags.slice(0, 3).map((t) => (
-          <span
-            key={t.name}
-            style={{ color: t.color, fontSize: "0.72rem", fontWeight: 600 }}
-          >
-            #{t.name}
-          </span>
-        ))}
+        <div
+          style={{
+            display: "flex",
+            gap: "0.4rem",
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
+          }}
+        >
+          {project.tags.slice(0, 2).map((t) => (
+            <span
+              key={t.name}
+              style={{ color: t.color, fontSize: "0.72rem", fontWeight: 600 }}
+            >
+              #{t.name}
+            </span>
+          ))}
+        </div>
+
+        <span
+          style={{
+            color: "var(--cyan)",
+            fontSize: "0.75rem",
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            whiteSpace: "nowrap",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "4px",
+          }}
+        >
+          <i className="fa fa-plus-circle" />
+          HLD
+        </span>
       </div>
     </div>
   );
@@ -235,6 +379,7 @@ export default function Projects() {
   const ref = useRef(null);
   const [view, setView] = useState<"grid" | "list">("grid");
   const [preview, setPreview] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -264,7 +409,9 @@ export default function Projects() {
           }}
         >
           Enterprise Lakehouse platforms, Delta Lake medallion architectures,
-          and automated cloud ETL orchestration.
+          and automated cloud ETL orchestration. Click any project to inspect
+          the High-Level Design (HLD), Low-Level Design (LLD), and production
+          code.
         </p>
 
         {/* View toggle */}
@@ -318,7 +465,12 @@ export default function Projects() {
             }}
           >
             {projects.map((project, i) => (
-              <ProjectCard key={project.name} project={project} index={i} />
+              <ProjectCard
+                key={project.name}
+                project={project}
+                index={i}
+                onSelect={setSelectedProject}
+              />
             ))}
           </div>
         ) : (
@@ -329,7 +481,10 @@ export default function Projects() {
                 onMouseEnter={() => setPreview(project.image)}
                 onMouseLeave={() => setPreview(null)}
               >
-                <ProjectListRow project={project} />
+                <ProjectListRow
+                  project={project}
+                  onSelect={setSelectedProject}
+                />
               </div>
             ))}
             {preview && (
@@ -360,6 +515,12 @@ export default function Projects() {
             )}
           </div>
         )}
+
+        {/* PROJECT DEEP DIVE MODAL */}
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
     </section>
   );

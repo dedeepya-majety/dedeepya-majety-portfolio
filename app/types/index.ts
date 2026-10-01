@@ -29,14 +29,17 @@ export interface Job {
   quote?: { text: string; author: string };
 }
 
-export interface Project {
-  name: string;
-  desc: string;
-  tags: string[];
-  image: string;
-  sourceCode?: string;
-  liveDemo?: string;
-}
+export type {
+  Project,
+  ProjectTag,
+  ProjectPillar,
+  DataFlowStep,
+  SlaMetric,
+  ProjectLLD,
+  ProjectCodeSnippet,
+  ProjectImpactMetric,
+  ProjectChallenge,
+} from "@/app/data/projects";
 
 export interface Recognition {
   name: string;
