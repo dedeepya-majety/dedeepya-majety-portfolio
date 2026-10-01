@@ -136,7 +136,8 @@ export const jobs: Job[] = [
     period: "Feb 2022 – Mar 2024",
     location: "Chennai, Tamil Nadu, India",
     desc: "Automated SQL data extraction scripts, tuned PowerCenter workflows, and completed structured cloud and big data engineering training.",
-    stack: "Python, SQL, Linux/Shell, Informatica PowerCenter, Relational Modeling",
+    stack:
+      "Python, SQL, Linux/Shell, Informatica PowerCenter, Relational Modeling",
     overview:
       "Gained hands-on production data engineering experience through Cognizant's GenC engineering program, resolving production tickets and building internal data tooling.",
     highlights: [

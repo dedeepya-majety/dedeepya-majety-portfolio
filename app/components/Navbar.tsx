@@ -151,26 +151,25 @@ export default function Navbar() {
             borderTop: "1px solid rgba(255,255,255,0.1)",
           }}
         >
-          {[
-            ...navLinks,
-            { id: "resume", label: "Download Resume (PDF)" },
-          ].map((link) => (
-            <a
-              key={link.id}
-              href={link.id === "resume" ? "/resume.pdf" : `#${link.id}`}
-              target={link.id === "resume" ? "_blank" : undefined}
-              rel={link.id === "resume" ? "noopener noreferrer" : undefined}
-              style={{
-                ...linkStyle,
-                display: "block",
-                padding: "0.65rem 0",
-                color: link.id === "resume" ? "var(--cyan)" : "#ffffff",
-              }}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {[...navLinks, { id: "resume", label: "Download Resume (PDF)" }].map(
+            (link) => (
+              <a
+                key={link.id}
+                href={link.id === "resume" ? "/resume.pdf" : `#${link.id}`}
+                target={link.id === "resume" ? "_blank" : undefined}
+                rel={link.id === "resume" ? "noopener noreferrer" : undefined}
+                style={{
+                  ...linkStyle,
+                  display: "block",
+                  padding: "0.65rem 0",
+                  color: link.id === "resume" ? "var(--cyan)" : "#ffffff",
+                }}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </div>
       )}
     </nav>

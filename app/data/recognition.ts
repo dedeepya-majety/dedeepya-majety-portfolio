@@ -44,8 +44,7 @@ export const recognitions: Recognition[] = [
   },
   {
     name: "Saveetha Engineering College - Academic Council",
-    title:
-      "Department of Electronics & Communication Engineering",
+    title: "Department of Electronics & Communication Engineering",
     badge: "First Class with Distinction",
     date: "2018 - 2022",
     logo: "/img/education/saveetha.svg",

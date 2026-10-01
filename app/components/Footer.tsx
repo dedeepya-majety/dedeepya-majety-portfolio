@@ -51,8 +51,7 @@ export default function Footer() {
         ))}
       </nav>
       <p style={{ color: "#64748b", fontSize: "0.82rem", margin: 0 }}>
-        &copy; {new Date().getFullYear()} Dedeepya Majety. All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Dedeepya Majety. All rights reserved.
       </p>
     </footer>
   );

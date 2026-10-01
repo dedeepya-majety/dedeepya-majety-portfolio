@@ -23,7 +23,8 @@ export const degrees: Degree[] = [
     institution: "Saveetha Engineering College",
     shortName: "Saveetha",
     logo: "/img/education/sastra.svg",
-    degree: "Bachelor of Engineering (B.E.) in Electrical, Electronics & Communications Engineering",
+    degree:
+      "Bachelor of Engineering (B.E.) in Electrical, Electronics & Communications Engineering",
     period: "2018 – 2022",
     location: "Chennai, Tamil Nadu, India",
     gpa: "First Class",
@@ -32,11 +33,13 @@ export const degrees: Degree[] = [
     highlights: [
       {
         label: "Engineering Foundations",
-        detail: "Specialized in data structures, relational database systems, and signal processing algorithms",
+        detail:
+          "Specialized in data structures, relational database systems, and signal processing algorithms",
       },
       {
         label: "Technical Project Lead",
-        detail: "Led undergraduate engineering cohort projects on automated data telemetry and embedded systems",
+        detail:
+          "Led undergraduate engineering cohort projects on automated data telemetry and embedded systems",
       },
     ],
     coursework: [

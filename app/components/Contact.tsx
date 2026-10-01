@@ -139,7 +139,8 @@ export default function Contact() {
                     background: "#10B981",
                   }}
                 />
-                Databricks Certified Spark Associate & Microsoft Certified PL-300
+                Databricks Certified Spark Associate & Microsoft Certified
+                PL-300
               </div>
             </div>
 
