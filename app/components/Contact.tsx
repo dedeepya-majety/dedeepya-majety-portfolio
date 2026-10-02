@@ -13,7 +13,7 @@ const CognizantDatabricksEngine = dynamic(
 
 const socialLinks = [
   {
-    href: "https://www.linkedin.com/in/majetydedeepya-data-engineer",
+    href: "https://www.linkedin.com/in/dedeepya-majety/",
     icon: "fa-linkedin",
     label: "LinkedIn",
     color: "#0e76a7",

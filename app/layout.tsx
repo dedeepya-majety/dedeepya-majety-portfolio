@@ -156,7 +156,7 @@ export default function RootLayout({
                 "Power BI & DAX",
               ],
               sameAs: [
-                "https://www.linkedin.com/in/majetydedeepya-data-engineer",
+                "https://www.linkedin.com/in/dedeepya-majety/",
                 "https://github.com/dedeepya-majety",
               ],
               worksFor: {

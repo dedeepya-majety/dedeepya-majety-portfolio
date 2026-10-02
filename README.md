@@ -4,7 +4,7 @@
 > 3+ Years at Cognizant Technology Solutions: Enterprise Lakehouse & Medallion Architecture (Bronze/Silver/Gold), Informatica to Azure Databricks Migration (40% Speedup, ~30% Cost Reduction), Hybrid Airflow & ADF Orchestration.
 
 🌐 **GitHub Showcase**: [https://github.com/dedeepya-majety](https://github.com/dedeepya-majety)  
-💼 **LinkedIn**: [https://www.linkedin.com/in/majetydedeepya-data-engineer](https://www.linkedin.com/in/majetydedeepya-data-engineer)  
+💼 **LinkedIn**: [https://www.linkedin.com/in/dedeepya-majety/](https://www.linkedin.com/in/dedeepya-majety/)  
 📜 **Credentials**: Databricks Certified Associate Developer for Apache Spark 3.0 & Microsoft Certified: Power BI Data Analyst Associate (PL-300)
 
 ---

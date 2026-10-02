@@ -4,7 +4,7 @@ export default function Footer() {
   const links = [
     { href: "https://github.com/dedeepya-majety", label: "GitHub" },
     {
-      href: "https://www.linkedin.com/in/majetydedeepya-data-engineer",
+      href: "https://www.linkedin.com/in/dedeepya-majety/",
       label: "LinkedIn",
     },
     { href: "mailto:majetydedeepya0@gmail.com", label: "Contact" },
