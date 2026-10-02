@@ -63,7 +63,7 @@ export default function Hero() {
             }}
           >
             <Image
-              src="/img/avatar.jpg"
+              src="/img/dedeepya.jpeg"
               alt="Dedeepya Majety"
               width={180}
               height={180}

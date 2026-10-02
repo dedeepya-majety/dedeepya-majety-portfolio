@@ -129,7 +129,7 @@ export default function RootLayout({
               name: "Dedeepya Majety",
               alternateName: ["Majety Dedeepya", "dedeepya-majety"],
               url: "https://dedeepya-majety.github.io",
-              image: "https://dedeepya-majety.github.io/img/avatar.jpg",
+              image: "https://dedeepya-majety.github.io/img/dedeepya.jpeg",
               email: "mailto:majetydedeepya0@gmail.com",
               jobTitle: "Azure Data Engineer",
               description:
