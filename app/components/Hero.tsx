@@ -5,8 +5,8 @@ import { FlipWords } from "@/app/components/ui/FlipWords";
 
 const ROLES = [
   "3+ Years Architecting Enterprise Azure Lakehouses",
-  "Databricks Certified Spark Associate Developer",
-  "Ex-Associate Data Engineer @ Cognizant",
+  "Databricks Certified Data Engineer Associate & Microsoft Certified",
+  "Associate Data Engineer @ Cognizant",
   "Automated Delta Lake & PySpark Pipelines",
   "Unity Catalog & Azure Data Factory Orchestration",
 ];

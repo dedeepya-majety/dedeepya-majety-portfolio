@@ -2,27 +2,6 @@ import type { Recognition } from "@/app/types";
 
 export const recognitions: Recognition[] = [
   {
-    name: "Data & Analytics Practice Leadership",
-    title:
-      "Cognizant Delivery Excellence: Informatica to Azure Databricks Migration",
-    badge: "Delivery Excellence Award",
-    date: "2024",
-    logo: "/img/companies/cognizant.svg",
-    category: "awards",
-    quote:
-      "Awarded for leading the migration of 40+ legacy Informatica PowerCenter workflows to Azure Databricks Delta Lake. Successfully reduced pipeline runtimes by 40% and cut cloud compute spend by ~30% with zero data loss and automated regression validation.",
-  },
-  {
-    name: "Enterprise Data Platform Directorate",
-    title: "Cognizant Spot Award: Unity Catalog Governance & Automation",
-    badge: "Spot Recognition Award",
-    date: "2023",
-    logo: "/img/companies/cognizant.svg",
-    category: "engineering",
-    quote:
-      "Recognized with the Spot Award for spearheading Unity Catalog implementation across multiple business units, enforcing table and column-level RBAC and automated data lineage to achieve full enterprise data audit readiness.",
-  },
-  {
     name: "Cognizant Talent Operations & Practice Leadership",
     title: "Cognizant Career Elevation: Associate - Data Engineer",
     badge: "Merit Promotion",

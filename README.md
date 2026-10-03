@@ -5,7 +5,7 @@
 
 🌐 **GitHub Showcase**: [https://github.com/dedeepya-majety](https://github.com/dedeepya-majety)  
 💼 **LinkedIn**: [https://www.linkedin.com/in/dedeepya-majety/](https://www.linkedin.com/in/dedeepya-majety/)  
-📜 **Credentials**: Databricks Certified Associate Developer for Apache Spark 3.0 & Microsoft Certified: Power BI Data Analyst Associate (PL-300)
+📜 **Credentials**: Databricks Certified Data Engineer Associate, Microsoft Certified: Power BI Data Analyst Associate & Power Platform Fundamentals Associate
 
 ---
 
@@ -25,7 +25,7 @@
 
 1. **Hero**: Interactive role rotation, verified status pills (Databricks & Power BI Certified, Open to Azure Data Engineer & Databricks Roles), and PDF resume download.
 2. **About & Tech Stack**: Core data engineering pillars, interactive skills matrix (Azure Databricks, PySpark, Delta Lake, ADF, Airflow, ADLS Gen2, Informatica MDM, SQL, Power BI), and career metrics.
-3. **Recognition**: Cognizant Delivery Excellence Award, Spot Recognition Award, and Career Promotions.
+3. **Recognition**: Career Progression Letters (Associate Data Engineer, Programming Analyst) and Academic Distinction.
 4. **Experience**: Cognizant Technology Solutions (Associate Data Engineer, Programming Analyst, Intern).
 5. **Featured Projects**:
    - Legacy Informatica PowerCenter to Azure Databricks Lakehouse Migration (40% runtime reduction, 30% cost savings).

@@ -28,7 +28,8 @@ export const metadata: Metadata = {
     "Dedeepya Majety",
     "Majety Dedeepya",
     "Azure Data Engineer",
-    "Databricks Certified Associate Developer",
+    "Microsoft Certified: Power BI Data Analyst Associate",
+    "Databricks Certified Data Engineer Associate",
     "Apache Spark 3.0",
     "PySpark",
     "Delta Lake",
@@ -171,9 +172,9 @@ export default function RootLayout({
                 },
               ],
               award: [
-                "Databricks Certified Associate Developer for Apache Spark 3.0",
-                "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
-                "Cognizant Delivery Excellence Award (Lakehouse Migration)",
+                "Microsoft Certified: Power BI Data Analyst Associate",
+                "Microsoft Certified: Power Platform Fundamentals",
+                "Databricks Certified Data Engineer Associate",
               ],
               workExperience: [
                 {

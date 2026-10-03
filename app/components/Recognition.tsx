@@ -8,10 +8,8 @@ import { recognitions } from "@/app/data";
 import type { Recognition as RecognitionType } from "@/app/types";
 
 const CATEGORIES = [
-  { id: "all", label: "All Artifacts" },
+  { id: "all", label: "All Commendations" },
   { id: "progression", label: "Career Progression Letters" },
-  { id: "awards", label: "Executive Awards" },
-  { id: "engineering", label: "Technical Excellence" },
   { id: "academic", label: "Academic Distinction" },
 ] as const;
 
